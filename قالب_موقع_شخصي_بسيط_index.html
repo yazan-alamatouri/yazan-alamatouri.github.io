@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YA — مصوّر & تسويق رقمي</title>
+  <meta name="description" content="موقع شخصي بسيط لعرض الخدمات والأعمال والتواصل." />
+  <meta property="og:title" content="YA — مصوّر & تسويق رقمي" />
+  <meta property="og:description" content="أعرض خدمات التصوير والتسويق الرقمي مع معرض أعمال وروابط تواصل." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/cover.jpg" />
+  <style>
+    :root{
+      --bg:#0b0b0f;        /* خلفية عامة */
+      --card:#121217;      /* بطاقات وأقسام */
+      --text:#e6e6eb;      /* لون النص */
+      --muted:#a5a7b3;     /* نص ثانوي */
+      --brand:#6ee7ff;     /* لون رئيسي (يمكن تغييره) */
+      --accent:#ffd166;    /* لون إبراز ثانوي */
+      --border:#1e1f25;    /* حدود ناعمة */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans Arabic, Tahoma, Arial}
+    a{color:var(--brand);text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1100px,92%);margin:0 auto}
+
+    /* شريط التنقل */
+    .nav{position:sticky;top:0;z-index:1000;background:rgba(11,11,15,.6);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:#0b0b0f;font-weight:800}
+    .menu{display:flex;gap:10px}
+    .menu a{padding:8px 12px;border-radius:10px}
+    .menu a:hover{background:#1a1b20}
+    .hamburger{display:none;border:none;background:transparent;font-size:22px;color:var(--text);cursor:pointer}
+
+    /* بطل الصفحة */
+    header.hero{padding:64px 0 24px;text-align:center}
+    .hero h1{font-size:clamp(28px,4vw,54px);margin:10px 0}
+    .hero p{color:var(--muted);font-size:clamp(16px,2vw,20px)}
+    .cta{display:flex;gap:12px;justify-content:center;margin-top:18px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:14px;border:1px solid #2a2b33;background:#171821;color:var(--text)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--accent));color:#0b0b0f;font-weight:700}
+
+    /* أقسام عامة */
+    .section{padding:48px 0}
+    .section h2{font-size:clamp(22px,2.5vw,34px);margin:0 0 18px}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px}
+
+    /* نبذة وإحصائيات */
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .stats .card{text-align:center}
+
+    /* الخدمات */
+    .services .card{grid-column:span 4}
+
+    /* الأعمال */
+    .portfolio .item{grid-column:span 4;aspect-ratio:4/3;overflow:hidden;border-radius:16px;border:1px solid var(--border);background:#0f1015;display:grid;place-items:center;color:#a8abb6}
+
+    /* تواصل */
+    .contact form{display:grid;gap:12px}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #2a2b33;background:#0f1015;color:var(--text)}
+
+    footer{border-top:1px solid var(--border);padding:24px 0;color:var(--muted);font-size:14px}
+
+    @media (max-width: 900px){
+      .services .card,.portfolio .item{grid-column:span 6}
+      .stats{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width: 600px){
+      .services .card,.portfolio .item{grid-column:span 12}
+      .menu{display:none}
+      .hamburger{display:block}
+      header.hero{padding-top:32px}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#">
+        <div class="logo">YA</div>
+        <strong>YA Creative</strong>
+      </a>
+      <button class="hamburger" aria-label="القائمة">☰</button>
+      <div class="menu">
+        <a href="#about">من أنا</a>
+        <a href="#services">الخدمات</a>
+        <a href="#work">الأعمال</a>
+        <a href="#contact">تواصل</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero container">
+    <h1>موقع شخصي بسيط — تصوير وتسويق رقمي</h1>
+    <p>أصمم هوية رقمية وصور احترافية للمطاعم والضيافة في الإمارات.</p>
+    <div class="cta">
+      <a class="btn primary" href="#contact">ابدأ الآن</a>
+      <a class="btn" href="#work">شاهد الأعمال</a>
+    </div>
+  </header>
+
+  <section id="about" class="section container">
+    <h2>نبذة سريعة</h2>
+    <p>اكتب هنا تعريفًا مختصرًا: من أنت، ماذا تقدّم، ولماذا تختارُك العلامات.</p>
+    <div class="stats">
+      <div class="card"><h3>+5 سنوات</h3><p>خبرة</p></div>
+      <div class="card"><h3>100+</h3><p>جلسة تصوير</p></div>
+      <div class="card"><h3>20+</h3><p>عميل</p></div>
+      <div class="card"><h3>8.9/10</h3><p>رضا العملاء</p></div>
+    </div>
+  </section>
+
+  <section id="services" class="section container services">
+    <h2>الخدمات</h2>
+    <div class="grid">
+      <div class="card"><h3>تصوير مطاعم</h3><p>أطباق، أجواء، وفيديوهات قصيرة.</p></div>
+      <div class="card"><h3>إدارة سوشيال</h3><p>خطة محتوى، تصميم منشورات، وإعلانات مدفوعة.</p></div>
+      <div class="card"><h3>هوية بصرية</h3><p>شعار، ألوان، قوالب قابلة للتعديل.</p></div>
+    </div>
+  </section>
+
+  <section id="work" class="section container portfolio">
+    <h2>أعمال مختارة</h2>
+    <div class="grid">
+      <a class="item" href="#" title="مشروع 1">ضع صورة هنا</a>
+      <a class="item" href="#" title="مشروع 2">ضع صورة هنا</a>
+      <a class="item" href="#" title="مشروع 3">ضع صورة هنا</a>
+      <a class="item" href="#" title="مشروع 4">ضع صورة هنا</a>
+      <a class="item" href="#" title="مشروع 5">ضع صورة هنا</a>
+      <a class="item" href="#" title="مشروع 6">ضع صورة هنا</a>
+    </div>
+  </section>
+
+  <section id="contact" class="section container contact">
+    <h2>تواصل</h2>
+    <p>واتساب: <a href="https://wa.me/9715XXXXXXXX">+9715XXXXXXXX</a> — إيميل: <a href="mailto:you@example.com">you@example.com</a></p>
+    <form onsubmit="event.preventDefault(); alert('تم الإرسال!'); this.reset();">
+      <input type="text" placeholder="الاسم" required>
+      <input type="email" placeholder="البريد" required>
+      <textarea rows="4" placeholder="رسالتك" required></textarea>
+      <button class="btn primary" type="submit">أرسل</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="container">© <span id="year"></span> YA Creative — كل الحقوق محفوظة.</div>
+  </footer>
+
+  <script>
+    // قائمة الموبايل
+    document.querySelector('.hamburger')?.addEventListener('click', () => {
+      const m = document.querySelector('.menu');
+      m.style.display = m.style.display === 'flex' ? 'none' : 'flex';
+    });
+    // سنة ديناميكية
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
